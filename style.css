@@ -1,0 +1,206 @@
+/* --- 1. 共通ルール --- */
+body {
+    background-color: #f7f7f7;
+    margin: 0;
+    font-family: 'Cormorant Garamond', 'serif', 'Times New Roman';
+    color: #1a1a1a;
+}
+
+/* --- 2. ヘッダー（タイトル部分） --- */
+.site-header {
+    height: 60vh; /* 画面の高さの60%くらい使って中央に置く */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.site-title {
+    font-size: 5vw;
+    letter-spacing: 0.8em;
+    text-transform: uppercase;
+    margin: 0;
+    padding-left: 0.8em;
+}
+
+.site-subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    color: #888;
+    font-style: italic;
+    margin: 20px 0 0 0;
+}
+
+/* --- 3. Aboutセクション --- */
+.about-section {
+    padding: 150px 0;
+    background-color: #f7f7f7;
+    width: 100%;
+}
+
+.about-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 60px;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    line-height: 2;
+    margin-bottom: 40px;
+}
+
+.about-details {
+    border-top: 1px solid #ddd;
+    padding-top: 30px;
+    display: inline-block;
+    text-align: left;
+}
+
+.about-details p span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* --- 4. Contactセクション --- */
+.contact-section {
+    padding-top: 200px !important;
+    padding-bottom: 250px !important;
+    display: block !important;
+    width: 100% !important;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-message {
+    font-size: 0.95rem;
+    line-height: 2;
+    margin-bottom: 50px;
+    color: #444;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 18px 50px;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+}
+
+.contact-button:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    letter-spacing: 0.3em;
+}
+
+/* --- Footer --- */
+.site-footer {
+    padding: 60px 0;
+    background-color: #f7f7f7; /* 背景と同じ色にして、文字だけ浮かせる */
+    border-top: 1px solid #eee; /* 薄い線を入れて、区切りを作る */
+}
+
+.copyright {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+body {
+    background-color: #f7f7f7;
+    margin: 0;
+    /* 1.英字専用を先に書く → 2.日本語用を次に書く → 3.予備の指定 */
+    font-family: 'Cormorant Garamond', 'Noto Sans JP', serif;
+    font-weight: 300;
+    color: #1a1a1a;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased; /* 文字をより滑らかにする魔法 */
+}
+
+/* タイトルなどは、より英字の美しさを強調するためにこれだけでOK */
+.site-title, .section-title, .contact-button {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.3em;
+}
+
+/* --- 修正後 --- */
+.work-img {  /* 👈 ここを html と同じ「work-img」にしました */
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* --- 5. Works Grid (横並びの設定) --- */
+.works-grid {
+    display: grid;
+    /* PCでは横に3つ、同じ幅で並べる */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* 画像同士の間隔 */
+    max-width: 1000px; /* 全体の幅を抑えて、余白の美しさを出す */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.work-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* マウスを乗せた時に少しだけ浮かす（プロの隠し味） */
+.work-item:hover {
+    transform: translateY(-5px);
+}
+
+.work-img {
+    width: 100%;       /* 親要素（grid）の幅に合わせる */
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 2px; /* 角を落としすぎないのがDEEPBLUE流 */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* 非常に薄い影 */
+}
+
+.work-category {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.work-name {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: #333;
+    font-family: 'Shippori Mincho', serif; /* 日本語は明朝体で上品に */
+}
+
+.work-item a {
+    text-decoration: none;
+    color: inherit; /* 文字色を親要素（黒）に合わせる */
+    display: block; /* 範囲を広げる */
+}
